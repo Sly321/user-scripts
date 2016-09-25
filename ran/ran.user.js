@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ran URL Script
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Zeigt die scheiß url's an.
 // @author       Sly321
 // @match        http://www.ran.de/us-sport/nfl/live/*
@@ -26,6 +26,7 @@
 	div.css("background", "white");
 	div.css("border", "3px solid grey");
 	div.css("word-wrap", "break-word");
+	div.css("font-family", "monospace");
 
 	setTimeout(function() {
 		$("body").append(div);
