@@ -1,11 +1,11 @@
 import chai = require("chai");
 let expect = chai.expect;
 
-import Main = require('../scripts/main');
+import df = require('../scripts/_default-functions');
 
 describe('testMain', () => {
 
-	let classUnderTest = Main;
+	let classUnderTest = df;
 
 	// Vor jedem Test
 	beforeEach(() => {

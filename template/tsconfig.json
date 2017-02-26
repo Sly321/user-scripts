@@ -9,6 +9,7 @@
 		"noImplicitAny": false,
 		"removeComments": true,
 		"moduleResolution": "node",
+		"noImplicitUseStrict": true,
 		"allowUnreachableCode": true,
 		"suppressImplicitAnyIndexErrors": true
 	},

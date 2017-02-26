@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var util = require('gulp-util');
 var tsc = require('gulp-typescript');
 var mocha = require('gulp-mocha');
+var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
 
 function handleError(err) {
@@ -12,11 +13,9 @@ function handleError(err) {
 gulp.task('compile-ts', ['compile-scripts', 'compile-tests']);
 
 gulp.task('compile-scripts', function () {
+    var tsProject = tsc.createProject('tsconfig.json');
     return gulp.src(['./scripts/**/*.ts'])
-        .pipe(tsc({
-            module: "commonjs",
-            target: "ES5"
-        }))
+        .pipe(tsProject())
         .on('error', util.log)
         .pipe(gulp.dest('./scripts'));
 });
@@ -42,6 +41,12 @@ gulp.task('watch', function () {
     gulp.watch(['./**/*.ts'], function () {
         runSequence('compile-ts', 'test');
     });
+});
+
+gulp.task('concat', function() {
+  return gulp.src(['./scripts/_.js', './scripts/*.js'])
+    .pipe(concat('user.script.js'))
+    .pipe(gulp.dest('./min/'));
 });
 
 gulp.task('default', function () {
