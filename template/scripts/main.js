@@ -1,5 +1,6 @@
 //import Vote = require('../models/vote');
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function init() {
     return "null";
 }

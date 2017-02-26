@@ -13,8 +13,8 @@
 		"suppressImplicitAnyIndexErrors": true
 	},
 	"filesGlob": [
-		"**/*.ts",
-		"**/*.tsx",
+		"./**/*.ts",
+		"./**/*.tsx",
 		"!node_modules/**"
 	],
 	"atom": {
@@ -22,7 +22,7 @@
 		"formatOnSave": true
 	},
     "typeRoots": [
-      "../node_modules/@types"
+      "./node_modules/@types"
     ],
     "types" : [
       "chai",
