@@ -8,7 +8,13 @@ function addGlobalStyle(css) {
 	head.appendChild(style);
 }
 
-/** Main Method */
-$(document).ready(() => {
+function addStyle() {
 	addGlobalStyle(".import-row { background: #f0f0f0; } .import-row:hover { text-decoration: underline; color: blue; cursor: pointer; } ");
-});
+}
+
+/** Main Method */
+if (typeof $ !== 'undefined') {
+	$(document).ready(() => {
+		addStyle();
+	});
+}

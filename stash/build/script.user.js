@@ -20,9 +20,14 @@ function addGlobalStyle(css) {
     style.innerHTML = css;
     head.appendChild(style);
 }
-$(document).ready(function () {
+function addStyle() {
     addGlobalStyle(".import-row { background: #f0f0f0; } .import-row:hover { text-decoration: underline; color: blue; cursor: pointer; } ");
-});
+}
+if (typeof $ !== 'undefined') {
+    $(document).ready(function () {
+        addStyle();
+    });
+}
 
 var getLinkFromImportElement, openUrlInNewTab, getHtmlLink, replaceJavaWithHtml, buildDocLink, getJavaxDocLink, getJavaxAnnotationDocLink, getJavaUtilDocLink, getJavaIoDocLink, getJavaBeanDocLink, handleSchultraegerportal, handleEudSchule, handleThirdpartyImport, navigateTo, getAllImportsAndSetClassName, getSpringDocLink;
 var JAVA_ORACLE_API = "https://docs.oracle.com/javaee/7/api/";
