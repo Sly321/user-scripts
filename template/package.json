@@ -23,6 +23,7 @@
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
+    "gulp-minify": "0.0.15",
     "gulp-mocha": "^4.0.1",
     "gulp-typescript": "^3.1.5",
     "gulp-watch": "^4.3.11",

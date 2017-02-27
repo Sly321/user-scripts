@@ -3,14 +3,13 @@ var util = require('gulp-util');
 var tsc = require('gulp-typescript');
 var mocha = require('gulp-mocha');
 var concat = require('gulp-concat');
+var minify = require('gulp-minify');
 var runSequence = require('run-sequence');
 
 function handleError(err) {
     console.log(err.toString());
     this.emit('end');
 }
-
-gulp.task('compile-ts', ['compile-scripts', 'compile-tests']);
 
 gulp.task('compile-scripts', function () {
     var tsProject = tsc.createProject('tsconfig.json');
@@ -49,6 +48,26 @@ gulp.task('concat', function() {
     .pipe(gulp.dest('./min/'));
 });
 
-gulp.task('default', function () {
+gulp.task('compress', function() {
+  gulp.src('min/user.script.js')
+    .pipe(minify({
+        ext:{
+            min: [/user\.script\.js$/, 'min.user.script.js']
+        },
+        exclude: ['test'],
+        ignoreFiles: ['.combo.js', '-min.js'],
+		preserveComments: 'all'
+    })).pipe(gulp.dest('min'));
+});
+
+gulp.task('minify', ['concat', 'compress']);
+
+gulp.task('compile-ts', ['compile-scripts', 'compile-tests']);
+
+gulp.task('ctw', function () {
     runSequence('compile-ts', 'test', 'watch');
+});
+
+gulp.task('default', function () {
+    runSequence('compile-ts', 'test', 'minify');
 });
