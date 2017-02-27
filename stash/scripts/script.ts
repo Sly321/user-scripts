@@ -1,5 +1,3 @@
-'use strict';
-
 let getLinkFromImportElement, openUrlInNewTab, getHtmlLink,
 	replaceJavaWithHtml, buildDocLink, getJavaxDocLink,
 	getJavaxAnnotationDocLink, getJavaUtilDocLink, getJavaIoDocLink,
@@ -11,7 +9,7 @@ const JAVA_ORACLE_API = "https://docs.oracle.com/javaee/7/api/";
 const JAVA_ORACLE_DOCS = "https://docs.oracle.com/javase/7/docs/api/";
 const SPRING_DOC = "http://docs.spring.io/spring-framework/docs/2.5.x/api/";
 
-function isSrcImport(link) {
+export function isSrcImport(link) {
 	var scag = /senbjw|isbj|eud|schule|verwalt_berlin/g;
 	var java = /javax.faces|java.util|javax.annotation|java.io|java.beans|org.springframework/g;
 	if (link.match(scag) || link.match(java)) {

@@ -24,7 +24,7 @@ $(document).ready(function () {
     addGlobalStyle(".import-row { background: #f0f0f0; } .import-row:hover { text-decoration: underline; color: blue; cursor: pointer; } ");
 });
 
-'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
 var getLinkFromImportElement, openUrlInNewTab, getHtmlLink, replaceJavaWithHtml, buildDocLink, getJavaxDocLink, getJavaxAnnotationDocLink, getJavaUtilDocLink, getJavaIoDocLink, getJavaBeanDocLink, handleSchultraegerportal, handleEudSchule, handleThirdpartyImport, navigateTo, getAllImportsAndSetClassName, getSpringDocLink;
 var JAVA_ORACLE_API = "https://docs.oracle.com/javaee/7/api/";
 var JAVA_ORACLE_DOCS = "https://docs.oracle.com/javase/7/docs/api/";
@@ -39,6 +39,7 @@ function isSrcImport(link) {
         return false;
     }
 }
+exports.isSrcImport = isSrcImport;
 navigateTo = function (javaLink) {
     javaLink += ".java";
     var originalPath = window.location.pathname.split("/");
