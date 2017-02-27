@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Stash Linker
 // @namespace    https://github.com/Sly321/
-// @version      0.2.6
+// @version      0.2.7
 // @description  You can click on import links to go the file.
 // @author       Sven Liebig
 // @match        http://stash.schuetze.infra/projects/*.java
@@ -24,14 +24,13 @@ $(document).ready(function () {
     addGlobalStyle(".import-row { background: #f0f0f0; } .import-row:hover { text-decoration: underline; color: blue; cursor: pointer; } ");
 });
 
-Object.defineProperty(exports, "__esModule", { value: true });
 var getLinkFromImportElement, openUrlInNewTab, getHtmlLink, replaceJavaWithHtml, buildDocLink, getJavaxDocLink, getJavaxAnnotationDocLink, getJavaUtilDocLink, getJavaIoDocLink, getJavaBeanDocLink, handleSchultraegerportal, handleEudSchule, handleThirdpartyImport, navigateTo, getAllImportsAndSetClassName, getSpringDocLink;
 var JAVA_ORACLE_API = "https://docs.oracle.com/javaee/7/api/";
 var JAVA_ORACLE_DOCS = "https://docs.oracle.com/javase/7/docs/api/";
 var SPRING_DOC = "http://docs.spring.io/spring-framework/docs/2.5.x/api/";
 function isSrcImport(link) {
     var scag = /senbjw|isbj|eud|schule|verwalt_berlin/g;
-    var java = /javax.faces|java.util|javax.annotation|java.io|java.beans|org.springframework/g;
+    var java = /javax.faces|javax.persistence|java.util|javax.annotation|java.io|java.beans|org.springframework/g;
     if (link.match(scag) || link.match(java)) {
         return true;
     }
@@ -39,7 +38,6 @@ function isSrcImport(link) {
         return false;
     }
 }
-exports.isSrcImport = isSrcImport;
 navigateTo = function (javaLink) {
     javaLink += ".java";
     var originalPath = window.location.pathname.split("/");
@@ -99,7 +97,7 @@ handleEudSchule = function (rootPath, sourceLink) {
 };
 handleThirdpartyImport = function (sourceFileLink) {
     var javax = /javax\/faces\//g;
-    var javaxAnnotation = /javax\/annotation\//g;
+    var javaxAnnotation = /javax\/annotation\/|javax\/persistance\//g;
     var javau = /java\/util\//g;
     var javaio = /java\/io\//g;
     var javabeans = /java\/beans\//g;
@@ -156,8 +154,9 @@ replaceJavaWithHtml = function (link) {
     return link;
 };
 getHtmlLink = function (str, slice) {
-    if (slice === undefined)
+    if (slice === undefined) {
         slice = str.length - 1;
+    }
     return str.slice(0, slice).join("/") + "/" + str.slice(slice, str.length).join(".");
 };
 openUrlInNewTab = function (url) {
@@ -189,5 +188,5 @@ getLinkFromImportElement = function (element) {
     }).join("/");
 };
 $(document).ready(function () {
-    var imports = getAllImportsAndSetClassName();
+    getAllImportsAndSetClassName();
 });

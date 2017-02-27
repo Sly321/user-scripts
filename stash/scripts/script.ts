@@ -9,9 +9,9 @@ const JAVA_ORACLE_API = "https://docs.oracle.com/javaee/7/api/";
 const JAVA_ORACLE_DOCS = "https://docs.oracle.com/javase/7/docs/api/";
 const SPRING_DOC = "http://docs.spring.io/spring-framework/docs/2.5.x/api/";
 
-export function isSrcImport(link) {
+function isSrcImport(link) {
 	var scag = /senbjw|isbj|eud|schule|verwalt_berlin/g;
-	var java = /javax.faces|java.util|javax.annotation|java.io|java.beans|org.springframework/g;
+	var java = /javax.faces|javax.persistence|java.util|javax.annotation|java.io|java.beans|org.springframework/g;
 	if (link.match(scag) || link.match(java)) {
 		return true;
 	} else {
@@ -92,7 +92,7 @@ handleEudSchule = (rootPath, sourceLink) => {
  */
 handleThirdpartyImport = (sourceFileLink) => {
 	var javax = /javax\/faces\//g;
-	var javaxAnnotation = /javax\/annotation\//g;
+	var javaxAnnotation = /javax\/annotation\/|javax\/persistance\//g;
 	var javau = /java\/util\//g;
 	var javaio = /java\/io\//g;
 	var javabeans = /java\/beans\//g;
@@ -176,8 +176,9 @@ replaceJavaWithHtml = function(link) {
 };
 
 getHtmlLink = function(str, slice) {
-	if (slice === undefined)
+	if (slice === undefined) {
 		slice = str.length - 1;
+	}
 	return `${str.slice(0, slice).join("/")}/${str.slice(slice, str.length).join(".")}`;
 };
 
@@ -219,5 +220,5 @@ getLinkFromImportElement = (element) => {
 
 /** Main Method */
 $(document).ready(() => {
-	var imports = getAllImportsAndSetClassName();
+	getAllImportsAndSetClassName();
 });
