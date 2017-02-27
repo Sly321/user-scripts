@@ -17,6 +17,7 @@
   "homepage": "https://github.com/Sly321",
   "devDependencies": {
     "@types/chai": "^3.4.35",
+    "@types/jquery": "^2.0.40",
     "@types/mocha": "^2.2.39",
     "@types/node": "^7.0.5",
     "@types/sinon-chai": "^2.7.27",

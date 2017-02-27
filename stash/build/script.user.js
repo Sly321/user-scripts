@@ -177,7 +177,7 @@
         style.innerHTML = css;
         head.appendChild(style);
     }
-    document.addEventListener("DOMContentLoaded", function () {
+    $(document).ready(function () {
         addGlobalStyle(".import-row { background: #f0f0f0; } .import-row:hover { text-decoration: underline; color: blue; cursor: pointer; } ");
         var imports = getAllImportsAndSetClassName();
         console.log(imports);

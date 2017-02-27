@@ -30,7 +30,8 @@
 	  "mocha",
 	  "node",
 	  "sinon-chai",
-	  "sinon"
+	  "sinon",
+	  "jquery"
   	],
 	"formatCodeOptions": {
 		"indentSize": 4,

@@ -220,7 +220,7 @@
     }
 
 	/** Main Method */
-	document.addEventListener("DOMContentLoaded", () => {
+	$(document).ready(() => {
 		addGlobalStyle(".import-row { background: #f0f0f0; } .import-row:hover { text-decoration: underline; color: blue; cursor: pointer; } ");
         var imports = getAllImportsAndSetClassName();
 		console.log(imports);
