@@ -1,4 +1,3 @@
-Object.defineProperty(exports, "__esModule", { value: true });
 function init() {
     return "null";
 }
@@ -11,3 +10,7 @@ function hello() {
     console.log("");
 }
 exports.hello = hello;
+function test() {
+    ;
+}
+exports.test = test;

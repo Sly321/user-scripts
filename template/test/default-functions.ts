@@ -1,9 +1,11 @@
 import chai = require("chai");
+import sinon = require("sinon-chai");
+
 let expect = chai.expect;
 
 import df = require('../scripts/_default-functions');
 
-describe('testMain', () => {
+describe('testDefaultFunctions', () => {
 
 	let classUnderTest = df;
 

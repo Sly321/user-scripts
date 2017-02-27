@@ -28,7 +28,9 @@
     "types" : [
       "chai",
 	  "mocha",
-	  "node"
+	  "node",
+	  "sinon-chai",
+	  "sinon"
   	],
 	"formatCodeOptions": {
 		"indentSize": 4,

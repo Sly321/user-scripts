@@ -9,3 +9,7 @@ export function calculate(firstNum: number, secondNum: number, operation: string
 export function hello(): void {
 	console.log("");
 }
+
+export function test(): void {
+	;
+}
