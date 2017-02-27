@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         Userscript
+// @name         Stash Linker
 // @namespace    https://github.com/Sly321/
-// @version      0.1
-// @description  Description.
+// @version      0.2.3
+// @description  You can click on import links to go the file.
 // @author       Sven Liebig
-// @match        http://google.de/*
+// @match        http://stash.schuetze.infra/projects/*.java
 // @require		 https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
-// @updateURL    https://raw.githubusercontent.com/Sly321/user-scripts/master/template/scripts/user-script.js
+// @updateURL    https://raw.githubusercontent.com/Sly321/user-scripts/master/stash/build/min.user.js
 // ==/UserScript==
