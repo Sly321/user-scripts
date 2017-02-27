@@ -1,6 +1,9 @@
 #
 node_modules
 **/node_modules
+**/test/*.js
+**/scripts/*.js
+!**/scripts/_.js
 lib
 
 # Windows image file caches
