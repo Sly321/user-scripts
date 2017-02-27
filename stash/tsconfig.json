@@ -1,0 +1,48 @@
+{
+	"buildOnSave": false,
+	"compilerOptions": {
+		"lib": [ "es2015", "dom" ],
+		"target": "es5",
+		"module": "commonjs",
+		"sourceMap": false,
+		"declaration": false,
+		"noImplicitAny": false,
+		"removeComments": true,
+		"moduleResolution": "node",
+		"noImplicitUseStrict": true,
+		"allowUnreachableCode": true,
+		"suppressImplicitAnyIndexErrors": true
+	},
+	"filesGlob": [
+		"./**/*.ts",
+		"./**/*.tsx",
+		"!node_modules/**"
+	],
+	"atom": {
+		"rewriteTsconfig": false,
+		"formatOnSave": true
+	},
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types" : [
+      "chai",
+	  "mocha",
+	  "node",
+	  "sinon-chai",
+	  "sinon"
+  	],
+	"formatCodeOptions": {
+		"indentSize": 4,
+		"tabSize": 4,
+		"convertTabsToSpaces": false,
+		"insertSpaceAfterCommaDelimiter": true,
+		"insertSpaceAfterSemicolonInForStatements": true,
+		"insertSpaceBeforeAndAfterBinaryOperators": true,
+		"insertSpaceAfterKeywordsInControlFlowStatements": true,
+		"insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+		"insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+		"placeOpenBraceOnNewLineForFunctions": false,
+		"placeOpenBraceOnNewLineForControlBlocks": false
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "name": "js-tdd",
+  "description": "Test Driven Developement example with Javascript",
+  "main": "scripts/script.js",
+  "authors": [
+    "Sven Liebig"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Sly321/js-tdd",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
